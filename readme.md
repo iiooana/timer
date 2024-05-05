@@ -13,8 +13,11 @@ Installation:
 8. Execute npm install -g nodemon 
 9. Execute npm install -g mongodb
 10. To run your application esecute nodemon
+11. Open in your browser http://localhost:8001/
 
-
+![Alt text](./example/home.png)
+![Alt text](./example/add_video.png)
+![Alt text](./example/video_list.png)
 
 
 
