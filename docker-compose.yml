@@ -1,0 +1,42 @@
+version: "3.1"
+services:
+  node:
+    image: "node:18"
+    user: "node"
+    working_dir: /home/node/app/
+    tty: true
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - ./code:/home/node/app/
+    expose:
+      - "3000"
+    ports: 
+      - "8001:3000"
+ 
+  mongodb:
+    image: mongo
+    container_name: mongo
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=root_pwd
+
+      - ME_CONFIG_MONGODB_ADMINUSERNAME=user_web
+      - ME_CONFIG_MONGODB_ADMINPASSWORD=pwd_web
+    ports:
+      - 27017:27017  
+    volumes:
+      - ./data:/data/db
+
+  mongo-express:
+    image: mongo-express
+    depends_on: 
+      - mongodb
+    ports:
+      - 8081:8081
+    environment:
+      - ME_CONFIG_BASICAUTH_USERNAME=user_web
+      - ME_CONFIG_BASICAUTH_PASSWORD=pwd_web
+      - ME_CONFIG_MONGODB_URL=mongodb://root:root_pwd@mongo:27017/ # digit http://0.0.0.0:8081/ on browser
+  
+          

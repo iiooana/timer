@@ -1,0 +1,17 @@
+extends index
+
+block content
+    div
+        h2 Add new link youtube
+        <form method="post" action="/add_new_video.html">
+            div.row    
+                div.col-70
+                    <p>URL:</p>
+                    input(type="url" name="url" required="required")
+                    <p>NAME:</p>   
+                    input(type="text" name="name" required="required")
+            div.row.mt-20        
+                div.col-70
+                    <button type="submit" class="btn btn-add">Add</button>
+            </form>
+

@@ -1,0 +1,39 @@
+extends index 
+
+block content 
+    div 
+        h2 video list 
+    .row 
+        .col-70 
+            ul.list-video 
+                if(typeof(videos) !== 'undefined' && videos.length > 0)            
+                    each item in videos     
+                        li <a href="#{item.url}" target="_blanck"> #{item.name}</a> <button class="btn-delete ml-10px" onclick="deleteVideo('#{item._id}',this)">delete</button>
+    script. 
+        function deleteVideo(id_video,element){
+            console.log ("id_video = "+id_video);
+            let request = new Request("/delete_video",{
+                method: "POST",
+                body: JSON.stringify({id: id_video}),
+                headers:{
+                    "Content-type":"application/json; charset=UTF-8"
+                }
+            });
+           fetch(request)
+            .then((response) => {
+                console.log(response.status );
+                if (response.status === 200) {
+                    element.parentNode.remove();
+                } else {
+                throw new Error("Something went wrong on API server!");
+                }
+            })
+            .then((response) => {
+                console.debug(response);
+                // …
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+
+        }                

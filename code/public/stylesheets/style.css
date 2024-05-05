@@ -1,0 +1,160 @@
+body {
+  font: 18px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #1a1919;
+  color:#ffff00;
+  text-transform: uppercase;
+  text-align: center;
+}
+nav ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #494848;
+  border-radius: 5px;
+}
+nav li {
+  float: left;
+}
+
+nav li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+nav li a:hover {
+  background-color: #ffff00;
+  color: #000000;
+}
+
+h1{
+  margin-top: 10px;
+  font-size: 50px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  text-shadow: 3px 3px 0px #FF1E1E, 5px 5px 0px #00FFD1;
+}
+h2{
+  font-size: 30px;
+  text-shadow: 3px 3px 0px #FF1E1E, 5px 5px 0px #00FFD1;
+}
+a {
+  color: #00B7FF;
+}
+.row{
+  display: flex;
+  justify-content: center;
+  margin: 10px 0px;
+}
+p.title{
+  color: #FFFFFF;
+}
+p.date{
+  font-weight: bold;
+}
+.boxer1,.boxer2,.boxer3{
+  border-radius: 11px;
+  padding: 4px;
+  margin: 0px 20px;
+  width: 40%;
+}
+.boxer1{
+  box-shadow: -5px 0px 27px 6px #00FFD1;
+}
+.boxer2{
+  box-shadow: -5px 0px 27px 6px #FF1E1E;
+}
+.boxer3{
+  box-shadow: -5px 0px 27px 6px #29e051;
+  min-height: 90px;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.boxer3 span{
+  margin: 1px 2px;
+}
+.col{
+  margin: 0px 20px;
+  width: 40%;
+}
+.col-70{
+  margin: 0px 20px;
+  width: 70%;
+}
+.mt-20{
+  margin-top: 20px;
+}
+input,.btn,.btn-delete{
+  border-radius: 5px;
+}
+input{
+  min-width: 230px;
+  min-height: 20px;
+}
+input:focus{
+  box-shadow: -5px 0px 27px 6px #ffff00;
+  border: 2px solid #ffff00;
+}
+.btn{
+  min-height: 40px;
+  min-width: 230px;
+  padding: 3px;
+  font: 18px "Lucida Grande", Helvetica, Arial, sans-serif;
+  border: 2px solid #ffff00;
+  color: #000000;
+  background-color: #ffff00;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bold;
+}
+.btn-xs{
+  width: 59px;
+  min-width: unset;
+  min-height: unset;
+  padding: 3px;
+  font-size: 12px;
+}
+ul.list-video{
+list-style-type: none;
+}
+ul.list-video li{
+  padding: 7px;
+}
+.btn-delete{
+  background-color: #ee3939;
+  border: 2px solid #ee3939;
+}
+.ml-10px{
+  margin-left: 10px;
+}
+input[type="time"]{
+  min-width: unset !important;
+}
+.zoom{
+  animation-name: zooming;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+@keyframes zooming{
+  50%{
+    transform: scale(1);
+  }
+  100%{
+    transform: scale(1.5);
+  }
+}
+.btn-settimer:visited{  
+  box-shadow: 2px 2px 2px orange;
+}
+.text-left{
+  text-align: left !important;
+}
+.div_ul{
+  text-align: left;
+  width: 430px;
+}
